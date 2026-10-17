@@ -10,6 +10,13 @@ export const COLORS = {
   primaryPressed: '#1F776C',
   border: '#E0E0E0',
   tagBackground: '#E9F5F3',
+  // Statusfarver til badges (afventer / accepteret / afvist, åben / tildelt)
+  warning: '#B7791F',
+  warningBackground: '#FDF3E1',
+  success: '#2F855A',
+  successBackground: '#E6F4EA',
+  danger: '#C53030',
+  dangerBackground: '#FDECEC',
 };
 
 export const GlobalStyle = StyleSheet.create({
@@ -251,6 +258,38 @@ export const GlobalStyle = StyleSheet.create({
     color: COLORS.primary,
     fontSize: 13,
     fontWeight: '600',
+  },
+
+  buttonSpacer: {
+    height: 10,
+  },
+
+  // Chip (genbrugelig valgknap, fx kategori, by og radius)
+  chipRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginHorizontal: -4,
+  },
+  chip: {
+    borderRadius: 20,
+    borderWidth: 1.5,
+    borderColor: COLORS.border,
+    backgroundColor: COLORS.card,
+    paddingHorizontal: 14,
+    paddingVertical: 7,
+    margin: 4,
+  },
+  chipSelected: {
+    borderColor: COLORS.primary,
+    backgroundColor: COLORS.tagBackground,
+  },
+  chipText: {
+    fontSize: 14,
+    color: COLORS.ink,
+  },
+  chipTextSelected: {
+    color: COLORS.primary,
+    fontWeight: '700',
   },
 
   // Rolleskift på ProfilScreen

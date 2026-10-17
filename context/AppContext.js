@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-import { PROFILE } from '../data/const';
+import { TASKS, APPLICATIONS, PROFILE } from '../data/const';
 import { DEFAULT_FILTER } from '../data/constants';
 import {
   loadTasks,
@@ -78,10 +78,12 @@ export function AppProvider({ children }) {
   }
 
   // Den studerende ansøger. Der er ingen login, så navnet tages fra profilen.
-  // Man kan kun have én ansøgning pr. opgave.
+  // Man kan kun have én ansøgning pr. opgave (andre studerende kan godt også ansøge).
   function applyToTask(taskId) {
     setApplications((prev) => {
-      if (prev.some((app) => app.taskId === taskId)) return prev;
+      if (prev.some((app) => app.taskId === taskId && app.studentName === PROFILE.name)) {
+        return prev;
+      }
       const application = {
         id: makeId(),
         taskId,
@@ -123,6 +125,14 @@ export function AppProvider({ children }) {
     setApplications((prev) => prev.filter((app) => app.id !== appId));
   }
 
+  // Sætter opgaver, ansøgninger og filter tilbage til seed-data, fx før en
+  // demovideo. Rollen beholdes, så man bliver på samme side af appen.
+  function resetDemoData() {
+    setTasks(TASKS);
+    setApplications(APPLICATIONS);
+    setFilter(DEFAULT_FILTER);
+  }
+
   const value = {
     ready,
     role,
@@ -135,6 +145,7 @@ export function AppProvider({ children }) {
     withdrawApplication,
     filter,
     setFilter,
+    resetDemoData,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

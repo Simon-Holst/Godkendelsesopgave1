@@ -1,5 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { TASKS } from './const';
+import { TASKS, APPLICATIONS } from './const';
 import { DEFAULT_FILTER } from './constants';
 
 // Tynde hjælpere omkring AsyncStorage. AsyncStorage gemmer kun tekst, så alt
@@ -46,9 +46,14 @@ export async function loadTasks() {
   return tasks;
 }
 
+// Ansøgninger seedes på samme måde, så virksomheden har ansøgere at vælge imellem.
 export async function loadApplications() {
-  const applications = await readJSON(KEYS.applications, []);
-  return Array.isArray(applications) ? applications : [];
+  const applications = await readJSON(KEYS.applications, null);
+  if (!Array.isArray(applications)) {
+    await writeJSON(KEYS.applications, APPLICATIONS);
+    return APPLICATIONS;
+  }
+  return applications;
 }
 
 // Rollen kan kun være én af to værdier; alt andet behandles som studerende.

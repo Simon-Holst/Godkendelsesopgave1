@@ -120,6 +120,33 @@ export const TASKS = [
   },
 ];
 
+// Seed-ansøgninger fra andre (mock) studerende på Café Nomads opgaver. Der er
+// kun én rigtig bruger i appen, så uden dem ville virksomheden aldrig have
+// flere ansøgere at vælge imellem i "Mine opgaver" (Modul B).
+export const APPLICATIONS = [
+  {
+    id: 'seed-1',
+    taskId: '1',
+    studentName: 'Maja Jensen',
+    status: 'afventer',
+    createdAt: '2026-10-08T10:00:00.000Z',
+  },
+  {
+    id: 'seed-2',
+    taskId: '1',
+    studentName: 'Ali Hassan',
+    status: 'afventer',
+    createdAt: '2026-10-09T14:30:00.000Z',
+  },
+  {
+    id: 'seed-3',
+    taskId: '7',
+    studentName: 'Emma Larsen',
+    status: 'afventer',
+    createdAt: '2026-10-10T08:15:00.000Z',
+  },
+];
+
 // Mock-profil for den studerende, vist på ProfilScreen.
 export const PROFILE = {
   name: 'Simon Holst',

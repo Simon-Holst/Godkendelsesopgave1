@@ -1,4 +1,4 @@
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, Alert } from 'react-native';
 import { useApp } from '../context/AppContext';
 import { PROFILE } from '../data/const';
 import { COMPANY } from '../data/constants';
@@ -6,12 +6,20 @@ import { GlobalStyle } from '../styles/GlobalStyle';
 import PrimaryButton from '../components/PrimaryButton';
 
 export default function ProfilScreen() {
-  const { role, setRole } = useApp();
+  const { role, setRole, resetDemoData } = useApp();
   const erStuderende = role === 'student';
 
   // Der er intet login, så profilen viser enten den studerende eller
   // mock-virksomheden, afhængigt af den valgte rolle.
   const navn = erStuderende ? PROFILE.name : COMPANY.name;
+
+  // Bekræftelse først, fordi nulstilling sletter oprettede opgaver og ansøgninger.
+  function bekraeftNulstil() {
+    Alert.alert('Nulstil demodata?', 'Opgaver, ansøgninger og filter sættes tilbage til start.', [
+      { text: 'Annullér', style: 'cancel' },
+      { text: 'Nulstil', style: 'destructive', onPress: resetDemoData },
+    ]);
+  }
 
   // Udleder initialer fra navnet til avatar-cirklen, fx "Simon Holst" → "SH"
   const initialer = navn
@@ -56,6 +64,8 @@ export default function ProfilScreen() {
           title={erStuderende ? 'Skift til virksomhed' : 'Skift til studerende'}
           onPress={() => setRole(erStuderende ? 'virksomhed' : 'student')}
         />
+        <View style={GlobalStyle.buttonSpacer} />
+        <PrimaryButton title="Nulstil demodata" variant="secondary" onPress={bekraeftNulstil} />
       </View>
     </ScrollView>
   );

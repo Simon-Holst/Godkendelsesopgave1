@@ -1,5 +1,6 @@
 import { View, Text, ScrollView } from 'react-native';
 import { useApp } from '../context/AppContext';
+import { PROFILE } from '../data/const';
 import { GlobalStyle } from '../styles/GlobalStyle';
 import PrimaryButton from '../components/PrimaryButton';
 
@@ -20,7 +21,10 @@ export default function OpgaveDetaljeScreen({ route }) {
 
   // Ansøgningen gemmes nu i AsyncStorage via context i stedet for lokal state,
   // så den huskes, når man forlader skærmen eller lukker appen.
-  const ansoegning = applications.find((app) => app.taskId === task.id);
+  // Kun den studerendes egen ansøgning tæller; andre ansøgere vises ikke her.
+  const ansoegning = applications.find(
+    (app) => app.taskId === task.id && app.studentName === PROFILE.name
+  );
   const erTildelt = task.status === 'tildelt';
 
   let knapTekst = 'Ansøg om opgaven';
