@@ -1,4 +1,17 @@
-// Mock-data for opgaver: al data er lokal og statisk.
+import { findCity } from './cities';
+
+// Koordinater for en by, så seed-opgaverne bruger præcis de samme punkter som
+// filteret. Hver opgave får lat/lng fra sin by.
+function coordsFor(cityName) {
+  const city = findCity(cityName);
+  return { lat: city.lat, lng: city.lng };
+}
+
+// Seed-opgaver: de bruges kun første gang appen åbnes. Derefter ligger opgaverne
+// i AsyncStorage (se data/storage.js), så nye opgaver fra virksomheder og
+// statusændringer huskes, efter appen er lukket.
+// remote: true betyder, at opgaven kan løses online, så den kan vises uanset
+// hvor den studerende bor (vigtigt for lokationsfilteret).
 export const TASKS = [
   {
     id: '1',
@@ -10,6 +23,10 @@ export const TASKS = [
     estimatedHours: 5,
     hourlyRate: 150,
     location: 'København',
+    ...coordsFor('København'),
+    remote: true,
+    status: 'åben',
+    createdAt: '2026-10-01T09:00:00.000Z',
   },
   {
     id: '2',
@@ -21,6 +38,10 @@ export const TASKS = [
     estimatedHours: 8,
     hourlyRate: 180,
     location: 'Aarhus',
+    ...coordsFor('Aarhus'),
+    remote: true,
+    status: 'åben',
+    createdAt: '2026-10-02T09:00:00.000Z',
   },
   {
     id: '3',
@@ -32,6 +53,10 @@ export const TASKS = [
     estimatedHours: 3,
     hourlyRate: 200,
     location: 'Odense',
+    ...coordsFor('Odense'),
+    remote: false,
+    status: 'åben',
+    createdAt: '2026-10-03T09:00:00.000Z',
   },
   {
     id: '4',
@@ -43,6 +68,10 @@ export const TASKS = [
     estimatedHours: 6,
     hourlyRate: 140,
     location: 'København',
+    ...coordsFor('København'),
+    remote: false,
+    status: 'åben',
+    createdAt: '2026-10-04T09:00:00.000Z',
   },
   {
     id: '5',
@@ -54,6 +83,10 @@ export const TASKS = [
     estimatedHours: 4,
     hourlyRate: 160,
     location: 'Aalborg',
+    ...coordsFor('Aalborg'),
+    remote: false,
+    status: 'åben',
+    createdAt: '2026-10-05T09:00:00.000Z',
   },
   {
     id: '6',
@@ -65,6 +98,10 @@ export const TASKS = [
     estimatedHours: 5,
     hourlyRate: 175,
     location: 'København',
+    ...coordsFor('København'),
+    remote: false,
+    status: 'åben',
+    createdAt: '2026-10-06T09:00:00.000Z',
   },
   {
     id: '7',
@@ -76,6 +113,10 @@ export const TASKS = [
     estimatedHours: 6,
     hourlyRate: 155,
     location: 'København',
+    ...coordsFor('København'),
+    remote: true,
+    status: 'åben',
+    createdAt: '2026-10-07T09:00:00.000Z',
   },
 ];
 

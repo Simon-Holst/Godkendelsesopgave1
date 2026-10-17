@@ -27,8 +27,53 @@ export const GlobalStyle = StyleSheet.create({
     color: COLORS.ink,
     marginBottom: 12,
   },
+  loadingContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: COLORS.background,
+  },
+  emptyText: {
+    fontSize: 15,
+    color: COLORS.muted,
+    textAlign: 'center',
+    paddingHorizontal: 32,
+    marginTop: 24,
+  },
+
+  // Pladsholder-screens fra Fase 1 (fjernes, når modulerne er bygget)
+  stubContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 24,
+  },
+  stubText: {
+    fontSize: 15,
+    color: COLORS.muted,
+  },
 
   // OpgavelisteScreen
+  listHeader: {
+    paddingHorizontal: 16,
+  },
+  listHeaderRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 4,
+  },
+  listCount: {
+    fontSize: 14,
+    color: COLORS.muted,
+  },
+  listHeaderButton: {
+    width: 110,
+  },
+  taskLocation: {
+    fontSize: 13,
+    color: COLORS.muted,
+    marginBottom: 8,
+  },
   taskCard: {
     backgroundColor: COLORS.card,
     borderRadius: 14,
@@ -89,6 +134,16 @@ export const GlobalStyle = StyleSheet.create({
   },
   primaryButtonDisabled: {
     backgroundColor: COLORS.muted,
+    borderColor: COLORS.muted,
+  },
+  secondaryButton: {
+    backgroundColor: COLORS.card,
+    borderWidth: 1.5,
+    borderColor: COLORS.primary,
+    paddingVertical: 10.5,
+  },
+  secondaryButtonText: {
+    color: COLORS.primary,
   },
 
   // OpgaveDetaljeScreen
@@ -196,5 +251,19 @@ export const GlobalStyle = StyleSheet.create({
     color: COLORS.primary,
     fontSize: 13,
     fontWeight: '600',
+  },
+
+  // Rolleskift på ProfilScreen
+  roleCard: {
+    backgroundColor: COLORS.card,
+    borderRadius: 14,
+    padding: 16,
+    marginHorizontal: 16,
+    marginBottom: 32,
+  },
+  roleText: {
+    fontSize: 15,
+    color: COLORS.ink,
+    marginBottom: 12,
   },
 });
