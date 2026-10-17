@@ -5,6 +5,11 @@ import { filterTasks } from '../utils/filterTasks';
 import { GlobalStyle } from '../styles/GlobalStyle';
 import PrimaryButton from '../components/PrimaryButton';
 
+// Opgaver i samme by har afstand tæt på 0, så "ca. 0 km" erstattes af "under 1 km".
+function afstandTekst(km) {
+  return km < 1 ? 'under 1 km' : `ca. ${Math.round(km)} km`;
+}
+
 export default function OpgavelisteScreen({ navigation }) {
   const { tasks, filter } = useApp();
 
@@ -52,7 +57,7 @@ export default function OpgavelisteScreen({ navigation }) {
             <Text style={GlobalStyle.taskLocation}>
               {item.location}
               {item.remote ? ' · Kan løses online' : ''}
-              {item.distanceKm != null ? ` · ca. ${Math.round(item.distanceKm)} km` : ''}
+              {item.distanceKm != null ? ` · ${afstandTekst(item.distanceKm)}` : ''}
             </Text>
 
             <View style={GlobalStyle.taskMetaRow}>
