@@ -1,6 +1,6 @@
-# StudieGig (godkendelsesopgave 2)
+# meritZ (godkendelsesopgave 2)
 
-StudieGig er en demo-app til kurset "Innovation og ny teknologi" (CBS). Appen viser idéen om en tosidet platform, der matcher studerende med korte, fleksible opgaver fra virksomheder på tværs af fagområder (marketing, dataanalyse, IT, admin), så de kan opbygge CV-relevant erfaring i stedet for et almindeligt studiejob.
+meritZ er en demo-app til kurset "Innovation og ny teknologi" (CBS). Appen viser idéen om en tosidet platform, der matcher studerende med korte, fleksible opgaver fra virksomheder på tværs af fagområder (marketing, dataanalyse, IT, admin), så de kan opbygge CV-relevant erfaring i stedet for et almindeligt studiejob.
 
 Version 1 (godkendelsesopgave 1) viste kun studenter-siden med statiske mock-data. Version 2 bygger videre på feedbacken:
 
@@ -35,10 +35,10 @@ Scan QR-koden med Expo Go (iOS/Android), eller kør i simulator via `i` / `a` i 
 |---|---|---|
 | Version 1 (godkendelsesopgave 1) | Opgaveliste, Opgavedetalje, Profil | Simon Holst |
 | Fase 1: fundament (datamodel, AsyncStorage, context, rollebaseret navigation, rolleskift, nulstil demodata) | `data/`, `context/AppContext.js`, `App.js`, `components/`, `utils/format.js`, `styles/GlobalStyle.js`, eksisterende screens | Simon Holst |
-| Modul A: Opret opgave (virksomhed) | `screens/OpretOpgaveScreen.js`, `styles/OpretOpgaveStyle.js` | [navn] |
-| Modul B: Mine opgaver og ansøgere (virksomhed) | `screens/MineOpgaverScreen.js`, `styles/MineOpgaverStyle.js` | [navn] |
-| Modul C: Mine ansøgninger (studerende) | `screens/MineAnsoegningerScreen.js`, `styles/MineAnsoegningerStyle.js` | [navn] |
-| Modul D: Filter, lokation og radius (studerende) | `screens/FilterScreen.js`, `styles/FilterStyle.js`, `utils/distance.js`, `utils/filterTasks.js` | [navn] |
+| Modul A: Opret opgave (virksomhed) | `screens/OpretOpgaveScreen.js`, `styles/OpretOpgaveStyle.js` | Simon Holst og Andreas Hougaard |
+| Modul B: Mine opgaver og ansøgere (virksomhed) | `screens/MineOpgaverScreen.js`, `styles/MineOpgaverStyle.js` | Andreas Hougaard |
+| Modul C: Mine ansøgninger (studerende) | `screens/MineAnsoegningerScreen.js`, `styles/MineAnsoegningerStyle.js` | Iben Skafdrup |
+| Modul D: Filter, lokation og radius (studerende) | `screens/FilterScreen.js`, `styles/FilterStyle.js`, `utils/distance.js`, `utils/filterTasks.js` | Magnus Høgh |
 
 ## Link til demovideo
 

@@ -151,6 +151,6 @@ export const APPLICATIONS = [
 export const PROFILE = {
   name: 'Simon Holst',
   education: 'HA(it.) på CBS, 5. semester',
-  bio: 'Studerende med interesse for teknologi, data og marketing. Bruger StudieGig til at få praktisk erfaring ved siden af studiet.',
+  bio: 'Studerende med interesse for teknologi, data og marketing. Bruger meritZ til at få praktisk erfaring ved siden af studiet.',
   skills: ['Marketing', 'Dataanalyse', 'IT-support', 'Excel', 'Sociale medier'],
 };

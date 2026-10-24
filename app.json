@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "StudieGig",
-    "slug": "studiegig-app",
+    "name": "meritZ",
+    "slug": "meritz-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -24,9 +24,10 @@
       [
         "expo-location",
         {
-          "locationWhenInUsePermission": "StudieGig bruger din placering til at vise opgaver tæt på dig."
+          "locationWhenInUsePermission": "meritZ bruger din placering til at vise opgaver tæt på dig."
         }
-      ]
+      ],
+      "expo-status-bar"
     ]
   }
 }

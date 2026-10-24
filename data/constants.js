@@ -1,4 +1,4 @@
-// Forretningskonstanter for StudieGig, samlet ét sted så de er lette at ændre.
+// Forretningskonstanter for meritZ, samlet ét sted så de er lette at ændre.
 
 // Platformens gebyr som andel af lønnen (10 %). Det er en HYPOTESE, ikke en
 // endelig pris: vi tester i interviews med virksomheder, om de accepterer et

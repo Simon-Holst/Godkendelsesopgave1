@@ -6,10 +6,10 @@ import { DEFAULT_FILTER } from './constants';
 // gemmes som JSON. Nøglerne har et fælles præfiks, så vores data ikke kan
 // forveksles med andre pakkers data på telefonen.
 export const KEYS = {
-  tasks: '@studiegig/tasks',
-  applications: '@studiegig/applications',
-  role: '@studiegig/role',
-  filter: '@studiegig/filter',
+  tasks: '@meritz/tasks',
+  applications: '@meritz/applications',
+  role: '@meritz/role',
+  filter: '@meritz/filter',
 };
 
 // Læser og parser en nøgle. Hvis der intet er gemt, eller hvis data er
