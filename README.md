@@ -42,6 +42,6 @@ Scan QR-koden med Expo Go (iOS/Android), eller kør i simulator via `i` / `a` i 
 
 ## Link til demovideo
 
-Godkendelsesopgave 2: [SÆT LINK IND HER]
+Godkendelsesopgave 2: (https://youtube.com/shorts/x_LxYa9TJJM?feature=share)
 
 Godkendelsesopgave 1: (https://youtube.com/shorts/VwBviYJ8sMU?feature=share)
